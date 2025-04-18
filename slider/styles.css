@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #3e065e, #0b0111,#170224, #3e065e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.slider-container {
+    max-width: 800px;
+    width: 400px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 600px;
+    cursor: pointer;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    padding: 5px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px solid #a307ec;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #9906dd, 0 0 5px #d6c9dc;
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.slide img:hover {
+    box-shadow: 0 0 20px #b413ff, 0 0 40px #b413ff;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.nav-btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #b413ff;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn.active {
+    background-color: #b413ff;
+    box-shadow: 0 0 10px #b413ff;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+}
+
+.prev, .next {
+    color: #fff;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #b413ff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px #b413ff;
+    transition: all 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(180, 19, 255, 0.3);
+    box-shadow: 0 0 15px #b413ff, 0 0 25px #b413ff;
+}
